@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block titulo_nav %} !Bienvenidos! | Boda F&R {% endblock titulo_nav %}
+
+{# Contenido #}
+{% block content %}
+    {# Foto y nombres #}
+    <style>
+        .flor-sup, .flor-inf{
+            display:none;
+        }
+    </style>
+    <div class="principal">
+        {% include 'partials/foto-principal.html' %}
+        <div >
+    {# Texto bienvenida #}
+            <p class="titulo-principal  text-center">Francisco & Raquel</p>
+            <p class="subtitulo-princ text-center">
+                <p class="linea-princ">Nuestra Boda</p>
+            </p>
+            <p class="subtitulo-princ fecha">05 octubre 2024</p>
+
+            <p class="subtitulo-princ fecha">
+                <button class="btn-confirmation-princ">
+                    <a class="btn-princ-text" href="{% url 'confirmacion' %}"><span >Confirma tu Asitencia</span></a>
+                </button>
+            </p>
+        </div>
+    
+    </div>
+    <div class="secundario">
+        {% include 'partials/flor-sup-princ.html' %}
+        <p class="titulo-billion">Nuestra Historia</p>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <p class="texto-sec izda tit">¡Por fin llegó el momento!</p>
+                    <p class="texto-sec izda">Estamos superemocionados y tenemos tantas
+                        ganas de que llegue el gran día que hemos
+                        preparado la boda del siglo.</p>
+                    <p class="texto-sec izda tit-2">Calienta Motores</p>
+                </div>
+                <div class="col text-center">
+                    <img class="img-fluid" src="{%  static '/media/img/foto-princ-2.png' %}"> 
+                </div>
+                <div class="col">
+                    <p class="texto-sec dcha tit">¡La Boda más esperada!</p>
+                    <p class="texto-sec dcha">Si has llegado hasta aquí es porque queremos contar
+                        con tu compañía en este día tan especial..</p>
+                    <p class="texto-sec dcha tit-2">Para tener más información
+                        sigue deslizando hacia abajo</p>
+                </div>
+            </div>
+        </div>
+        <p class="titulo-billion text-center mt-5">¡Nos vemos pronto!</p>
+        <p class="texto-sec"><b>05 octubre 2024</b></p>
+        {% include 'partials/flor-inf-princ.html' %}
+        <p class="texto-sec final">esta boda es tan nuestra como de todos nuestros invitados,
+            por eso queremos queremos pedirte que añadas una canción a nuestra lista de reproducción
+            para que asi tengamos un trocito de ti ese día.  </p>
+        
+
+        <div class="container">
+            <iframe style="border-radius:12px" src="https://open.spotify.com/embed/playlist/5WIwzUSi1Y8Ep5W1GPkm3z?utm_source=generator&theme=0" width="50%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        {% include 'partials/flor_final_princ.html' %}
+
+
+    </div>
+    
+{% endblock content %}

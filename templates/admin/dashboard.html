@@ -1,0 +1,79 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block nav-breadcrumbs %}{% endblock %}
+
+{% block nav-sidebar %}{% endblock %}
+
+{% block content %}
+    {#Lista Aplicaciones y kpis de mensajes y canciones nuevas#}
+    <div id="dash-main">
+        <div class="menu">
+            {% include "admin/app_list.html" with app_list=app_list show_changelinks=True %}
+            <div class="kpi-row">
+                <div class="kpi">
+                    <p class="tit-kpi"> Mensajes</p>
+                    <p class="val-kpi ">{{ kpi_mensajes }}</p>
+                    <p class="subtit-kpi {% if kpi_no_leidos == 0 %}alerta-inv{% endif %} {% if kpi_no_leidos > 0 %}alerta{% endif %}">
+                        ¡{{ kpi_no_leidos }}
+                        {% if kpi_no_leidos > 1 %}
+                            nuevos mensajes
+                        {%else%}
+                            nuevo mensaje
+                        {% endif %}
+                    !</p>
+                </div>
+            </div>
+        </div>
+
+        {#KPIs de Invitados#}
+        <div class="kpi-grid">
+            <div class="kpi-row">
+                <div class="kpi">
+                    <p class="tit-kpi"> Invitados</p>
+                    <p class="val-kpi">{{ tot_inv }}</p>
+                    <p class="subtit-kpi {% if new_invitados == 0 %}alerta-inv{% endif %} {% if new_invitados > 0 %}alerta{% endif %}">
+                        ¡{{ new_invitados }}
+                        {% if new_invitados > 1 %}
+                            nuevos Invitados
+                        {%else%}
+                            nuevo Invitado
+                        {% endif %}
+                    !</p>
+                </div>
+                <div class="kpi">
+                    <p class="tit-kpi"> Adultos</p>
+                    <p class="val-kpi ">{{ kpi_adultos }}</p>
+                </div>
+                <div class="kpi">
+                    <p class="tit-kpi"> Niños</p>
+                    <p class="val-kpi ">{{ kpi_ninio }}</p>
+                </div>
+            </div>
+
+            <div class="kpi-row">
+                <div class="kpi">
+                    <p class="tit-kpi"> Vegetarianos</p>
+                    <p class="val-kpi ">{{ kpi_veg }}</p>
+                    <span class="tt-veg-text">
+                        <p>Adultos: {{ kpi_veg_adult }}  Niños: {{ kpi_veg_nin }}</p>
+                    </span>
+                </div>
+                <div class="kpi">
+                    <p class="tit-kpi"> Intolerantes</p>
+                    <p class="val-kpi ">{{ kpi_intol }}</p>
+                    <span class="tt-int-text">
+                        <p>Adultos: {{ kpi_intol_adult }}  Niños: {{ kpi_intol_nin }}</p>
+                        <p> {{ kpi_intolerancias }} </p>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

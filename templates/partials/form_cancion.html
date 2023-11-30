@@ -1,0 +1,18 @@
+<style>
+
+    input {
+        width:50%;
+    }
+</style>
+
+<form class="form" action="" method="POST">
+
+    {% csrf_token %}
+    <div class="section-cancion">
+        {{ playlist_form.as_p }}
+    
+        <button type="submit" class="playlist-btn">
+            <span class="btn-txt">Enviar</span>
+        </button>
+    </div>
+</form>

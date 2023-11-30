@@ -1,0 +1,122 @@
+
+:root {
+    --link-selected-fg: #666;
+    --hairline-color: #bb6f30;
+    --selected-row: #F07F3C66;
+    --text-color: #fcfcf7;
+   
+}
+
+.pdficon {
+    height: 30px;
+    width: 30px;
+}
+
+.pdflink {
+    margin-top: -5px;
+    margin-bottom: 10px;
+}
+
+.related-widget-wrapper-link {
+    display: none;
+}
+
+.tit-filtros {
+    display: flex;
+    flex-direction: row;
+}
+
+#changelist-filter p {
+    text-align: right;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+#changelist-filter {
+    margin: 0 0 0 0;
+}
+#changelist-filter p a{
+    color: var(--text-color);
+}
+
+
+#changelist-filter-extra-actions{
+    width: 100%;
+}
+
+#changelist .actions .button {
+    width: 50px;
+    border-radius: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: var(--hairline-color);
+    color: var(--text-color);
+}
+
+.icono-filtro {
+    margin-right: 5px;
+}
+
+.filter-list {
+    display: flex;
+    flex-direction: row;
+}
+
+/*Filter options Styles*/
+summary{
+    cursor: pointer;
+
+}
+
+details[open] {
+    margin: 0 2px;
+}
+
+#changelist-filter details[open] > summary::before {
+    content: url(/static/media/img/filtrar_despl.svg);
+}
+
+#changelist-filter details > summary::before {
+    content: url(/static/media/img/filtrar_oculto.svg);
+}
+
+details[open] > summary {
+    border-bottom: 2px solid var(--hairline-color);
+
+}
+
+ul > li {
+    display:inline-block;
+    margin: 0 15px;
+}
+
+
+
+/*Table display*/
+
+#changelist table thead th {
+    background-color: var(--selected-row);
+}
+
+table thead th .text a:focus, table thead th .text a:hover {
+    background-color: var(--selected-row);
+}
+
+
+
+@media (max-width: 1024px) {
+
+    #changelist table {
+        width: auto;
+    }
+
+    .filter-list {
+        display: flex;
+        flex-direction: column;
+    }
+
+    details[open] > summary {
+        width: max-content;
+    
+    }
+}

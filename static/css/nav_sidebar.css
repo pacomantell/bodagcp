@@ -1,0 +1,6 @@
+
+@media (max-width: 1024px) {
+    .main.shifted > #nav-sidebar {
+        margin-left: 25px;
+    }
+}

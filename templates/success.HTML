@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block titulo_nav %}Confirma tu asistencia | Boda R&F{% endblock titulo_nav %}
+
+
+{% block content %}
+{# Informacion #}
+<div class="container text-center col-lg-6 p-4 success-message">
+    <h1><b>¡Tu solicitud ha sido enviada con exito!</b></h1>
+    <h2>En breve nos pondremos en contacto contigo para resolver tu duda.</h2>
+</div>
+
+<div class="container col-lg-6 px-2" id="foto-princ">
+    {% include 'partials/success-check.html' %}
+
+</div>
+<div class="container text-center col-lg-6 p-5">
+    <button class="button-success">
+        <a class="btn-txt-success nav-link" href="{% url 'bienvenido' %}"><span >Volver a Inicio</span></a>
+    </button>
+</div>
+{% endblock content %}

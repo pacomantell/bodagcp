@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+
+{% block titulo_nav %}Confirma tu asistencia | Boda R&F{% endblock titulo_nav %}
+
+
+{% block content %}
+{# Informacion #}
+<div class="container text-center p-4">
+    <span class="titulo-billion">¿Vas a perderte este gran día?</span>
+    <div class="text-bebas">¡Gracias por todo!</div>
+    <div class="text-bebas-conf">hemos confirmado tu asistencia</div>
+</div>
+
+<div class="container col-lg-6 px-2" id="foto-princ">
+    {% include 'partials/success-check-confirmation.html' %}
+
+</div>
+<div class="container text-center p-1">
+    <div class="text-bebas">En breve recibirás un correo de confirmación, para asegurarte de que todo esta correcto 
+        para cualquier otra duda dirigirte al apartado de contacto.</div>
+    <div class="text-bebas"><b>¡Nos vemos pronto!</b></div>
+
+</div>
+<div class="container text-center col-lg-6 p-1">
+    <button class="button-success">
+        <a class="btn-txt-success nav-link" href="{% url 'bienvenido' %}"><span >Volver a Inicio</span></a>
+    </button>
+</div>
+{% endblock content %}

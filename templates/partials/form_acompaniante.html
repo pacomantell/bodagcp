@@ -1,0 +1,85 @@
+<style>
+
+  input {
+    width:100%;
+  }
+
+  .errorlist{
+    display:none;
+  }
+
+
+</style>
+
+<form class="form" action="" method="POST">
+
+  {% csrf_token %}
+
+
+
+  <div class="section-inputs-confirmation">
+
+    {{ contact_form.as_p}}
+    {{ vegetariano_form.as_p }}
+    {{ intolerancias_form.as_p}}
+  
+  </div>
+
+  <div class="section-inputs-confirmation">
+    {{ check_form_contact.as_p }}
+  </div>
+
+  <div class="section-inputs-num-acom">
+    {{ num_acom.as_p }}
+  </div>
+
+
+  {#BLOQUE ACOMPANIANTE/NINIO#}
+  
+  {% if list_acomp_adult_forms %}
+  <hr>
+    <div class="forms-acomp"> Adultos
+      {% for i in list_acomp_adult_forms %}
+
+
+
+        <form action="" method="POST">
+
+          {% csrf_token %}
+
+          <div class="section-acomp">
+            {{ i.as_p }}
+
+          </div>
+        </form>
+
+      {% endfor %}
+
+    {% endif %}
+    {% if list_acomp_nin_forms %}
+      <hr>
+      <span>Niños
+
+      {% for i in list_acomp_nin_forms %}
+
+        <form action="" method="POST">
+
+          {% csrf_token %}
+          
+          <div class="section-acomp">
+
+            {{ i.as_p }}
+
+          </div>
+        </form>
+
+      {% endfor %}
+    {% endif %}
+  
+
+    <button type="submit" class="sig-btn" action="">
+      <span class="btn-txt">Finalizar</span>
+    </button>
+</div>
+
+</form>

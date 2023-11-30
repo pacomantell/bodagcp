@@ -1,0 +1,35 @@
+<style>
+
+  input {
+    width:100%;
+  }
+
+</style>
+
+<form class="form" action="" method="POST" style="{% if flag_error == 'False' %} display:none{% endif %}">
+
+  {% csrf_token %}
+
+  <div class="section-inputs-confirmation">
+
+    {{ confirmation_contact_form.as_p }}
+    {{ vegetariano_form.as_p }}
+    {{ intolerancias_form.as_p}}
+  </div>
+
+
+  <div class="section-inputs-num">
+    {{ num_acom.as_p }}
+  </div>
+
+  <button type="submit" class="sig-btn" action="">
+    <span class="btn-txt">Siguiente</span>
+  </button>
+  </form>
+
+  <div class="container text-center col-lg-6 p-1 form" style="{% if flag_error == 'True' %} display:none{% endif %}">
+    <p class="contact-error"><b>Ya existe un email o teléfono como los introducidos</b></p>
+    <button class="button-success">
+        <a class="btn-txt-success nav-link" href="{% url 'confirmacion' %}"><span >Comenzar de nuevo</span></a>
+    </button>
+  </div>

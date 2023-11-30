@@ -1,0 +1,21 @@
+{% extends 'index.html' %}
+
+{% block titulo_nav %}Contacto | Boda R&F{% endblock titulo_nav %}
+
+
+{% block content %}
+{# Info contacto #}
+<div class="container text-center p-4">
+    <span class="titulo-billion">Si quieres contactar con nosotros</span>
+    <div class="text-bebas">¿tienes alguna duda o tal vez contarnos cualquier cosa?</div>
+    <div class="text-bebas">no te preocupes, por aquí puedes contactar con nosotros, escribe abajo lo que quieras comentarnos y nos llegará directamente a nuestro mail</div>
+</div>
+
+{# Formulario contacto #}
+{% include 'partials/contact_form.html' %}
+
+<div class="container text-center p-4">
+    <div class="text-bebas">Estaremos encantados de atenderte</div>
+</div>
+
+{% endblock content %}

@@ -1,0 +1,37 @@
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <span class="logo-resp">{% include 'partials/logo_nav.html' %}</span>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                <li class="mx-4">
+                    <button class="btn-nav {% if nbar == 'bienvenido' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'bienvenido' %}">Bienvenido</a>
+                    </button>
+                </li>
+                <li class="mx-4">
+                    <button class="btn-nav {% if nbar == 'datos_evento' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'datos_evento' %}">Datos del evento</a>
+                    </button>
+                </li>
+                <li class="nav-logo mx-4">
+                    <span class="nav-text-logo">{% include 'partials/logo_nav.html' %}
+                    </span>
+                </li>
+                <li class="mx-4">
+                    <button class="btn-nav {% if nbar == 'confirmacion' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'confirmacion' %}">Confirma tu asistencia</a>
+                    </button>
+                </li>
+                <li class="mx-4">
+                    <button class="btn-nav {% if nbar == 'contactform' %}active{% endif %}">
+                        <a class="nav-link" href="{% url 'contactform' %}">Contacto</a>
+                    </button>
+                </li>
+        </ul>
+        </div>
+    </div>
+</nav>

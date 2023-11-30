@@ -1,0 +1,40 @@
+<style>
+
+  input{
+    height: 5%;
+  }
+
+  .lab-name{
+    width:40%;
+  }
+
+.lab-email {
+    width:30%;
+  }
+
+.lab-tlf{
+    width:10%;
+  } 
+
+  @media screen and (max-width: 1680px){
+    .lab-name, .lab-email, .lab-tlf{
+      width:100%;
+    }
+  }
+
+</style>
+
+
+<form class="form" action="", method="POST">
+
+  {% csrf_token %}
+
+  <div class="section-inputs-contact">
+    {{ contact_form }}
+  </div>
+
+  <button type="submit" class="sig-btn btn-contact-form">
+    <span class="btn-txt">Enviar</span>
+  </button>
+
+</form>

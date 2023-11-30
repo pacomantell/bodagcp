@@ -1,0 +1,19 @@
+{% extends 'index.html' %}
+
+{% block titulo_nav %}Confirma tu asistencia | Boda R&F{% endblock titulo_nav %}
+
+
+{% block content %}
+{# Info confirmacion #}
+<div class="container text-center p-4">
+    <span class="titulo-billion">¿Vas a perderte este gran día?</span>
+    <div class="text-bebas">para confirmar tu asistencia, introduce tus datos personales y el número de asistentes que te acompañaran  ese día</div>
+    <div class="text-bebas">A continuación, introduce los nombres de cada uno de los asistentes si son niños o adultos, si hay alguien que quiera menú vegetariano
+        o vegano,  especifica también si tienes algún tipo de alergia o intolerancia alimenticia, para que la tengamos en cuenta. </div>
+    <div class="text-bebas"><b>Tras enviar la información recibirás un correo de confirmación de asistencia</b></div>
+    <div class="text-bebas">¡nos vemos pronto!</div>
+
+</div>
+{# Formulario confirmación #}
+{% include 'partials/confirmation_form.html' %}
+{% endblock content %}

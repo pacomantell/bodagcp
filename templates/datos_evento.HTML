@@ -1,0 +1,24 @@
+{% extends 'index.html' %}
+
+{% block titulo_nav %}Datos del evento | Boda R&F{% endblock titulo_nav %}
+
+
+{% block content %}
+<div class="container text-center p-4">
+    <p class="titulo-billion text-center">¿Cómo llegar hasta alli?</p>
+
+    <p class="text-bebas text-center">la dirección de este gran en evento es <b>la dirección de este gran en evento es calle parís, número 27, en purchil (vegas del Genil)</b></p>
+    <p class="text-bebas text-center">para llegar de forma más fácil solo tienes que <b>hacer click en el mapa</b> y te abrirá automáticamente
+        la dirección atreves de Google map.</p>
+    <p class="text-bebas text-center">si tienes alguna duda ve al apartado de contacto para hablar con nosotoros</p>
+    <div class="d-flex justify-content-center">
+        <div style="overflow:hidden;max-width:100%;width:500px;height:500px;">
+            <div id="google-maps-display" style="height:100%; width:100%;max-width:100%;">
+                <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Calle+París,+27,+Purchil,+España&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+            </div>
+            <a class="code-for-google-map" href="https://www.bootstrapskins.com/themes" id="grab-map-authorization">premium bootstrap themes</a><style>#google-maps-display img.text-marker{max-width:none!important;background:none!important;}img{max-width:none}</style>
+        </div>
+</div>
+    </div>
+        
+{% endblock content %}

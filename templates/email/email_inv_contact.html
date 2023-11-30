@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>!Gracias por confirmar tu asistencia!</h1>
+
+        <p>Recuerda que puedes preguntarnos cualquier duda a través de formulario de contacto.</p>
+        <p>Aquí tienes los <b>detalles de tu confirmación</b>:</p>
+
+        <ul>
+            <li><b>Nombre y Apellidos:</b> {{ name }}</li>
+            <li><b>Email:</b> {{ email }}</li>
+            <li><b>Teléfono:</b> {{ telefono }}</li>
+            <li><b>Menú vegetariano/vegano:</b>{% if veg == 1 %} No{% else %}  Si{% endif %}</li>
+            <li><b>Intolerancias:</b>{% if intolerancias == 1 %} No{% else %} Si{% endif %}</li>
+        </ul>
+        
+
+        {#Genero lista de acompañantes#}
+        <p>Detalles de los acompañantes:</p>
+        <ul> Adultos
+            {% for adulto in list_adultos %}
+            <ul>
+                <li><b>Nombre y Apellidos:</b> {{ adulto.desc_nombre }}</li>
+                <li><b>Menú Vegetariano:</b> {{ adulto.id_vegetarian }}</li>
+                <li><b>Intolerancias:</b> {{ adulto.id_intolerancias }}</li>
+            </ul>
+            {% endfor %}
+        </ul>
+        
+        {% if list_ninios %}
+            <ul>Niños
+                {% for ninio in list_ninios %}
+                <ul>
+                    <li>(Niño)</li>
+                    <li><b>Nombre y Apellidos:</b> {{ ninio.desc_nombre }}</li>
+                    <li><b>Menú Vegetariano:</b> {{ ninio.id_vegetarian }}</li>
+                    <li><b>Intolerancias:</b> {{ ninio.id_intolerancias }}</li>
+                </ul>
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+
+        {% if intolerancias == 2 %}
+            <p>!Tan pronto como configuremos el menú nos pondremos en contacto para que nos indiques tus intolerancias!</p>
+        {% endif %}
+
+        <p>!Un saludo y nos vemos el Gran Día!</p>
+    </body>
+</html>
